@@ -1,0 +1,30 @@
+#!/bin/bash -e
+
+until [[ "$#" == '0' ]]
+do
+	case "$1" in
+
+		"--what")
+			SOURCE="$2"
+			shift 2
+			;;
+
+		"--where")
+			TARGET="$2"
+			shift 2
+			;;
+
+		*)
+			! shift
+			exit "$?"
+			;;
+	esac
+done
+
+DEFAULT_SOURCE='/usr/share/guest-configuration'
+DEFAULT_TARGET='/home/guest'
+
+SOURCE="${SOURCE:-"$DEFAULT_SOURCE"}"
+TARGET="${TARGET:-"$DEFAULT_TARGET"}"
+
+exec rsync -r -pEAXog --specials "$SOURCE/" "$TARGET"

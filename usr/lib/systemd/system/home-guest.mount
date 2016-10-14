@@ -1,0 +1,14 @@
+[Unit]
+DefaultDependencies=no
+Conflicts=umount.target
+After=systemd-sysusers.service systemd-tmpfiles-setup.service
+Before=umount.target
+
+RefuseManualStart=yes
+RefuseManualStop=yes
+
+[Mount]
+What=tmpfs
+Type=tmpfs
+DirectoryMode=0750
+Options=uid=guest,gid=users,strictatime,nosuid,nodev
