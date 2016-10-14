@@ -9,3 +9,4 @@ RefuseManualStop=yes
 [Service]
 Type=oneshot
 ExecStart=/usr/sbin/systemd-prepare-guest
+ExecStart=/usr/sbin/bash -c 'exec rsync -r -pEAXog --specials /usr/share/guest-configuration /home/guest'
