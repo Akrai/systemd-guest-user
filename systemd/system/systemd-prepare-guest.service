@@ -1,7 +1,7 @@
 [Unit]
 DefaultDependencies=no
 Requires=home-guest.mount
-After=home-guest.mount systemd-tmpfiles-setup.service
+After=home-guest.mount systemd-tmpfiles-setup.service systemd-sysusers.service
 
 RefuseManualStart=yes
 RefuseManualStop=yes
@@ -10,3 +10,4 @@ RefuseManualStop=yes
 Type=oneshot
 ExecStart=/usr/sbin/rsync -r -E --specials /usr/share/guest-configuration/ /home/guest
 ExecStart=/usr/sbin/chown -R guest:users /home/guest
+ExecStart=/usr/sbin/chsh -s /usr/bin/sh guest
