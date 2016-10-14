@@ -10,5 +10,4 @@ RefuseManualStop=yes
 [Mount]
 What=tmpfs
 Type=tmpfs
-DirectoryMode=0750
-Options=uid=guest,gid=users,strictatime,nosuid,nodev
+Options=mode=0750,uid=guest,gid=users,strictatime,nosuid,nodev
