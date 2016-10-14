@@ -1,5 +1,4 @@
 [Unit]
-DefaultDependencies=no
 Conflicts=umount.target
 After=systemd-sysusers.service systemd-tmpfiles-setup.service
 Before=umount.target
