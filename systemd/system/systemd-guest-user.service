@@ -8,7 +8,7 @@ RefuseManualStop=yes
 
 [Service]
 Type=oneshot
-ExecStart=/usr/sbin/rsync -r -E --specials /usr/share/guest-configuration/ /home/guest
+ExecStart=/usr/sbin/bash -c 'cp -a /usr/share/guest-configuration/* /home/guest'
 ExecStart=/usr/sbin/chown -R guest:users /home/guest
 ExecStart=/usr/sbin/chsh -s /usr/bin/sh guest
 ExecStart=/usr/sbin/passwd -d guest
