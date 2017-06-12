@@ -11,6 +11,6 @@ Type=oneshot
 ExecStart=/usr/sbin/bash -c 'id guest >& /dev/null || useradd guest'
 ExecStart=/usr/sbin/usermod -d /home/guest/
 ExecStart=/usr/sbin/passwd -d guest
-ExecStart=/usr/sbin/bash -c 'cp -a /usr/share/guest-configuration/* /home/guest'
+ExecStart=/usr/sbin/bash -c 'cp -a /usr/share/guest-configuration/. /home/guest'
 ExecStart=/usr/sbin/chown -R guest:users /home/guest
 ExecStart=/usr/sbin/chsh -s /usr/bin/sh guest
