@@ -1,6 +1,6 @@
 [Unit]
 Conflicts=umount.target
-After=systemd-sysusers.service systemd-tmpfiles-setup.service
+After=systemd-tmpfiles-setup.service
 Before=umount.target
 
 RefuseManualStart=yes
