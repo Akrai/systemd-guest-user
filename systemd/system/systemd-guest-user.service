@@ -1,6 +1,6 @@
 [Unit]
 DefaultDependencies=no
-Before=systemd-tmpfiles-setup.service
+After=home-guest.mount
 
 RefuseManualStart=yes
 RefuseManualStop=yes
