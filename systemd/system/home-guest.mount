@@ -1,6 +1,5 @@
 [Unit]
 Conflicts=umount.target
-After=systemd-tmpfiles-setup.service
 Before=umount.target
 
 RefuseManualStart=yes
@@ -8,5 +7,6 @@ RefuseManualStop=yes
 
 [Mount]
 What=tmpfs
+Where=/home/guest
 Type=tmpfs
 Options=mode=0750,uid=guest,gid=users,strictatime,nosuid,nodev
