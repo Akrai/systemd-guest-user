@@ -1,21 +1,25 @@
-# Maintainer: Anna Ivanova <kalterfx@gmail.com>
+# Maintainer: Akrai <drokergeek@gmail.com>
+# Thanks to azurata and Skidnik for their jobs
 
 pkgname=systemd-guest-user
-pkgver=13.7db882f
+pkgver=33.2
 pkgrel=1
-url='https://github.com/kalterfive/systemd-guest-user'
+url='https://github.com/Akrai/systemd-guest-user'
 pkgdesc='A simple systemd configurations for guest user support'
 arch=(any)
 license=(GPL3)
-depends=(systemd)
-source=("${pkgname}::git://github.com/kalterfive/$pkgname")
+depends=("systemd")
+makedepends=("git")
+install=systemd-guest-user.install
+#source=("${pkgname}::git://github.com/Akrai/$pkgname") commenting this line in favor of using https as asked by an user
+source=("${pkgname}::git+https://github.com/Akrai/$pkgname")
 md5sums=(SKIP)
 
-function pkgver() {
-
-	cd "$pkgname"
-	echo "$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
-}
+# function pkgver() {
+# 
+# 	cd "$pkgname"
+# 	echo "$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
+# }
 
 function package() {
 
